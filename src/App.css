@@ -251,6 +251,13 @@
   line-height: 1.5;
 }
 
+.nf-divider {
+  border: none;
+  border-top: 1.5px solid #ececec;
+  margin: 1.1rem 0 0.7rem 0;
+  width: 100%;
+}
+
 .nf-footer-small {
   font-size: 0.65rem;
   padding: 0.3rem 0 0.1rem 0;
@@ -278,6 +285,14 @@
   background: #f2f2f2;
   color: #e60023;
   text-decoration: none;
+}
+
+.nf-optional-note {
+  font-size: 0.85rem;
+  color: #888;
+  margin: 0.2rem 0 0.2rem 0;
+  text-align: left;
+  padding-left: 0.1rem;
 }
 
 @media (max-width: 600px) {

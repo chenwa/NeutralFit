@@ -71,6 +71,7 @@ const Signup: React.FC = () => {
         </div>
         <input className="nf-input" name="email" type="email" placeholder="Email*" value={form.email} onChange={handleChange} required />
         <input className="nf-input" name="password" type="password" placeholder="Password*" value={form.password} onChange={handleChange} required />
+        <hr className="nf-divider" />
         <div className="nf-form-row">
           <input className="nf-input" name="street" placeholder="Street" value={form.street} onChange={handleChange} />
           <input className="nf-input" name="city" placeholder="City" value={form.city} onChange={handleChange} />
@@ -80,6 +81,7 @@ const Signup: React.FC = () => {
           <input className="nf-input" name="zip_code" placeholder="Zip Code" value={form.zip_code} onChange={handleChange} />
         </div>
         <input className="nf-input" name="country" placeholder="Country" value={form.country} onChange={handleChange} />
+        <div className="nf-optional-note">Address fields are optional and can be filled in later.</div>
         <button className="nf-btn nf-btn-primary nf-form-btn" type="submit">Sign Up</button>
       </form>
       {error && <div className="nf-error">{error}</div>}
