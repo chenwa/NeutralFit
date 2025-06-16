@@ -34,6 +34,7 @@ const Login: React.FC = () => {
 
   return (
     <div className="nf-form-container">
+      <button className="nf-home-btn" type="button" onClick={() => navigate('/')} aria-label="Close">&#10005;</button>
       <h2 className="nf-form-title">Login</h2>
       <form className="nf-form" onSubmit={handleSubmit}>
         <input className="nf-input" name="email" type="email" placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} required />
