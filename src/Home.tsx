@@ -17,7 +17,7 @@ const Home: React.FC = () => (
       <div className="nf-hero-content">
         <h1>Precision Golf Fitting & Beyond</h1>
         <p>
-          NeutralFit delivers expert golf club fitting and personalized recommendations to help you play your best. Our platform is designed to expand into other sports, providing athletes with data-driven insights and tailored equipment solutions for peak performance.
+          NeutralFit delivers expert golf club fitting and personalized recommendations to help you play your best. Our platform is designed to provide athletes with data-driven insights and tailored equipment solutions for peak performance.
         </p>
         <div className="nf-hero-buttons">
           <Link to="/signup" className="nf-btn nf-btn-primary">Get Fitted</Link>
