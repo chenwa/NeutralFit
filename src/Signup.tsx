@@ -61,21 +61,33 @@ const Signup: React.FC = () => {
   };
 
   return (
-    <div style={{ maxWidth: 400, margin: '2rem auto' }}>
-      <h2>Sign Up</h2>
-      <form onSubmit={handleSubmit}>
-        <input name="first_name" placeholder="First Name*" value={form.first_name} onChange={handleChange} required /><br />
-        <input name="last_name" placeholder="Last Name*" value={form.last_name} onChange={handleChange} required /><br />
-        <input name="email" type="email" placeholder="Email*" value={form.email} onChange={handleChange} required /><br />
-        <input name="password" type="password" placeholder="Password*" value={form.password} onChange={handleChange} required /><br />
-        <input name="street" placeholder="Street" value={form.street} onChange={handleChange} /><br />
-        <input name="city" placeholder="City" value={form.city} onChange={handleChange} /><br />
-        <input name="state" placeholder="State" value={form.state} onChange={handleChange} /><br />
-        <input name="zip_code" placeholder="Zip Code" value={form.zip_code} onChange={handleChange} /><br />
-        <input name="country" placeholder="Country" value={form.country} onChange={handleChange} /><br />
-        <button type="submit">Sign Up</button>
+    <div className="nf-form-container">
+      <h2 className="nf-form-title">Sign Up</h2>
+      <form className="nf-form nf-form-small" onSubmit={handleSubmit}>
+        <div className="nf-form-row">
+          <input className="nf-input" name="first_name" placeholder="First Name*" value={form.first_name} onChange={handleChange} required />
+          <input className="nf-input" name="last_name" placeholder="Last Name*" value={form.last_name} onChange={handleChange} required />
+        </div>
+        <input className="nf-input" name="email" type="email" placeholder="Email*" value={form.email} onChange={handleChange} required />
+        <input className="nf-input" name="password" type="password" placeholder="Password*" value={form.password} onChange={handleChange} required />
+        <div className="nf-form-row">
+          <input className="nf-input" name="street" placeholder="Street" value={form.street} onChange={handleChange} />
+          <input className="nf-input" name="city" placeholder="City" value={form.city} onChange={handleChange} />
+        </div>
+        <div className="nf-form-row">
+          <input className="nf-input" name="state" placeholder="State" value={form.state} onChange={handleChange} />
+          <input className="nf-input" name="zip_code" placeholder="Zip Code" value={form.zip_code} onChange={handleChange} />
+        </div>
+        <input className="nf-input" name="country" placeholder="Country" value={form.country} onChange={handleChange} />
+        <button className="nf-btn nf-btn-primary nf-form-btn" type="submit">Sign Up</button>
       </form>
-      {error && <div style={{ color: 'red', marginTop: 10 }}>{error}</div>}
+      {error && <div className="nf-error">{error}</div>}
+      <div className="nf-info-section">
+        <strong>Privacy Notice:</strong> NeutralFit does <u>not</u> collect, sell, or share your data. We will never send you marketing emails or share your information with third parties.
+      </div>
+      <footer className="nf-footer nf-footer-small">
+        &copy; {new Date().getFullYear()} NeutralFit. All rights reserved.
+      </footer>
     </div>
   );
 };

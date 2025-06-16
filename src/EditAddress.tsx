@@ -44,17 +44,20 @@ const EditAddress: React.FC = () => {
   };
 
   return (
-    <div style={{ maxWidth: 400, margin: '2rem auto' }}>
-      <h2>Edit Address</h2>
-      <form onSubmit={handleSubmit}>
-        <input name="street" placeholder="Street" value={address.street} onChange={handleChange} /><br />
-        <input name="city" placeholder="City" value={address.city} onChange={handleChange} /><br />
-        <input name="state" placeholder="State" value={address.state} onChange={handleChange} /><br />
-        <input name="zip_code" placeholder="Zip Code" value={address.zip_code} onChange={handleChange} /><br />
-        <input name="country" placeholder="Country" value={address.country} onChange={handleChange} /><br />
-        <button type="submit">Save Address</button>
+    <div className="nf-form-container">
+      <h2 className="nf-form-title">Edit Address</h2>
+      <form className="nf-form" onSubmit={handleSubmit}>
+        <input className="nf-input" name="street" placeholder="Street" value={address.street} onChange={handleChange} />
+        <input className="nf-input" name="city" placeholder="City" value={address.city} onChange={handleChange} />
+        <input className="nf-input" name="state" placeholder="State" value={address.state} onChange={handleChange} />
+        <input className="nf-input" name="zip_code" placeholder="Zip Code" value={address.zip_code} onChange={handleChange} />
+        <input className="nf-input" name="country" placeholder="Country" value={address.country} onChange={handleChange} />
+        <button className="nf-btn nf-btn-primary nf-form-btn" type="submit">Save Address</button>
       </form>
-      {message && <div style={{ marginTop: 10 }}>{message}</div>}
+      {message && <div className="nf-message">{message}</div>}
+      <footer className="nf-footer nf-footer-small">
+        &copy; {new Date().getFullYear()} NeutralFit. All rights reserved.
+      </footer>
     </div>
   );
 };

@@ -166,11 +166,94 @@
 
 .nf-footer {
   text-align: center;
-  padding: 1.2rem 0 0.8rem 0;
-  font-size: 1rem;
+  padding: 0.6rem 0 0.4rem 0;
+  font-size: 0.75rem;
   color: #888;
   background: transparent;
   letter-spacing: 1px;
+}
+
+.nf-form-container {
+  max-width: 350px;
+  margin: 3.5rem auto 0 auto;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+  padding: 1.5rem 1.2rem 0.5rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nf-form-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  color: #111;
+  letter-spacing: 1px;
+}
+
+.nf-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.nf-form-row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.nf-form-row .nf-input {
+  min-width: 0;
+}
+
+.nf-input {
+  flex: 1;
+  padding: 0.5rem 0.9rem;
+  border-radius: 22px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  margin-bottom: 0;
+  background: #fafafa;
+  transition: border 0.2s;
+  width: 100%;
+  box-sizing: border-box;
+}
+.nf-input:focus {
+  border: 1.5px solid #e60023;
+  outline: none;
+}
+
+.nf-form-btn {
+  width: 100%;
+  margin-top: 0.7rem;
+  padding: 0.7rem 0;
+  font-size: 1.1rem;
+}
+
+.nf-error {
+  color: #e60023;
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+.nf-info-section {
+  margin: 1.1rem 0 0.2rem 0;
+  font-size: 0.85rem;
+  color: #555;
+  background: #f7f7f7;
+  border-radius: 10px;
+  padding: 0.7rem 1rem;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.nf-footer-small {
+  font-size: 0.65rem;
+  padding: 0.3rem 0 0.1rem 0;
 }
 
 @media (max-width: 600px) {
@@ -188,5 +271,25 @@
   .nf-hero-buttons {
     flex-direction: column;
     gap: 1rem;
+  }
+  .nf-form-container {
+    max-width: 98vw;
+    padding: 1.2rem 0.5rem 1rem 0.5rem;
+    margin: 2rem auto 0 auto;
+    border-radius: 10px;
+  }
+  .nf-form-title {
+    font-size: 1.2rem;
+  }
+  .nf-form {
+    gap: 0.5rem;
+  }
+  .nf-form-row {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .nf-input {
+    font-size: 0.98rem;
+    padding: 0.45rem 0.7rem;
   }
 }

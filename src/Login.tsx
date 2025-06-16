@@ -33,14 +33,17 @@ const Login: React.FC = () => {
   };
 
   return (
-    <div style={{ maxWidth: 400, margin: '2rem auto' }}>
-      <h2>Login</h2>
-      <form onSubmit={handleSubmit}>
-        <input name="email" type="email" placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} required /><br />
-        <input name="password" type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} required /><br />
-        <button type="submit">Login</button>
+    <div className="nf-form-container">
+      <h2 className="nf-form-title">Login</h2>
+      <form className="nf-form" onSubmit={handleSubmit}>
+        <input className="nf-input" name="email" type="email" placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} required />
+        <input className="nf-input" name="password" type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} required />
+        <button className="nf-btn nf-btn-primary nf-form-btn" type="submit">Login</button>
       </form>
-      {error && <div style={{ color: 'red', marginTop: 10 }}>{error}</div>}
+      {error && <div className="nf-error">{error}</div>}
+      <footer className="nf-footer nf-footer-small">
+        &copy; {new Date().getFullYear()} NeutralFit. All rights reserved.
+      </footer>
     </div>
   );
 };
