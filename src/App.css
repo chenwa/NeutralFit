@@ -61,7 +61,6 @@
   font-size: 2rem;
   font-weight: 700;
   letter-spacing: 2px;
-  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
   text-transform: uppercase;
   color: #fff;
 }
@@ -372,39 +371,34 @@
   line-height: 1;
 }
 .nf-about {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh; /* Full screen height */
-  padding: 2rem;
-  background-color: #f4f4f4; /* Optional background color for visual separation */
-}
-
-.nf-about-content {
-  max-width: 800px;
-  width: 100%;
-}
-
-.nf-about-block {
+  padding: 2rem 0;
   background-color: #ffffff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.nf-about h2 {
-  margin-bottom: 1rem;
-  font-size: 2rem;
-  color: #333;
   text-align: center;
 }
 
-.nf-about p {
+.nf-about .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.nf-about h2 {
+  font-size: 2rem;
+  color: #333;
   margin-bottom: 1rem;
+}
+
+.nf-about-block {
+  margin: 0 auto;
+  max-width: 800px;
+  text-align: left;
+}
+
+.nf-about-block p {
   font-size: 1rem;
-  line-height: 1.6;
   color: #555;
+  line-height: 1.6;
+  margin-bottom: 1rem;
 }
 
 /* General container styling for sections */
@@ -507,6 +501,41 @@
 .nf-stats-grid p {
   font-size: 1rem;
   color: #555;
+}
+
+/* Contact Section */
+.nf-contact {
+  padding: 2rem 0;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.nf-contact .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.nf-contact h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.nf-contact p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.nf-contact a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.nf-contact a:hover {
+  text-decoration: underline;
 }
 
 @media (max-width: 600px) {

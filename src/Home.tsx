@@ -15,9 +15,11 @@ const Home: React.FC = () => (
     </nav>
     <section className="nf-hero">
       <div className="nf-hero-content-bg">
-        <h1>Precision Golf Fitting & Beyond</h1>
+        <h1>Precision Golf Fitting Without The Cost</h1>
         <p>
-          NeutralFit delivers expert golf club fitting and personalized recommendations to help you play your best. Our platform is designed to provide athletes with data-driven insights and tailored equipment solutions for peak performance.
+          NeutralFit delivers expert golf club fitting and personalized recommendations to help you play your best. 
+          Our platform is designed to provide athletes with data-driven insights and tailored equipment solutions 
+          for peak performance. Best of all, our service is completely free—no hidden costs or fees!
         </p>
         <div className="nf-hero-buttons">
           <Link to="/signup" className="nf-btn nf-btn-primary">Get Fitted</Link>
@@ -42,7 +44,7 @@ const Home: React.FC = () => (
       </div>
     </section>
     <section id="nf-about" className="nf-about">
-      <div className="nf-about-content">
+      <div className="container">
         <h2>About Us</h2>
         <div className="nf-about-block">
           <p>
@@ -131,6 +133,23 @@ const Home: React.FC = () => (
             <h3>50+</h3>
             <p>Countries Served</p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    {/* Contact Us Section */}
+    <section className="nf-contact">
+      <div className="container">
+        <h2>Contact Us</h2>
+        <p>
+          Have questions or need assistance? We're here to help! Reach out to us via email or follow us on social media.
+        </p>
+        <div className="nf-contact-details">
+          <p>Email: <a href="mailto:support@neutralfit.com">support@neutralfit.com</a></p>
+          <p>Follow us: 
+            <a href="https://twitter.com/neutralfit" target="_blank" rel="noopener noreferrer">Twitter</a>, 
+            <a href="https://facebook.com/neutralfit" target="_blank" rel="noopener noreferrer">Facebook</a>
+          </p>
         </div>
       </div>
     </section>
