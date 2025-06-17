@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import API_BASE_URL from './config';
+import './App.css';
 
 const Signup: React.FC = () => {
   const [form, setForm] = useState({
@@ -87,6 +88,12 @@ const Signup: React.FC = () => {
       {error && <div className="nf-error">{error}</div>}
       <div className="nf-info-section">
         <strong>Privacy Notice:</strong> NeutralFit does <u>not</u> collect, sell, or share your data. We will never send you marketing emails or share your information with third parties.
+      </div>
+      <div className="nf-info-section">
+        <h3>Why do we need this info?</h3>
+        <p>
+          We ask for your information to make sure you're a real person and not an internet bot trying to misuse our platform. This helps us keep NeutralFit safe and secure for everyone. Rest assured, your data is protected and will only be used to provide you with the best experience possible.
+        </p>
       </div>
       <footer className="nf-footer nf-footer-small">
         &copy; {new Date().getFullYear()} NeutralFit. All rights reserved.

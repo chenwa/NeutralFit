@@ -95,13 +95,15 @@
 }
 
 .nf-hero {
-  flex: 1;
+  width: 100vw;
+  min-height: 100vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url('../public/golf-1486354.jpg') center 30%/120% no-repeat;
-  padding: 3rem 1rem 2rem 1rem;
+  background: url('../public/golf-1486354.jpg') center 30%/cover no-repeat fixed;
   position: relative;
+  box-sizing: border-box;
 }
 
 .nf-hero-content {
@@ -109,6 +111,39 @@
   text-align: center;
   margin: 0 auto;
   z-index: 1;
+}
+
+.nf-hero-content-bg {
+  max-width: 650px;
+  margin: 0 auto;
+  text-align: center;
+  z-index: 1;
+  background: rgba(255,255,255,0.12);
+  box-shadow: 0 8px 32px 0 rgba(31,38,135,0.08);
+  border-radius: 22px;
+  padding: 2.5rem 2.2rem 2.2rem 2.2rem;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  transition: background 0.3s;
+}
+
+.nf-hero-content-bg h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 1.2rem;
+  color: #111;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 12px rgba(255,255,255,0.95), 0 1px 1px rgba(0,0,0,0.15);
+}
+
+.nf-hero-content-bg p {
+  font-size: 1.25rem;
+  color: #222;
+  margin-bottom: 2.2rem;
+  line-height: 1.6;
+  font-weight: 500;
+  text-shadow: 0 2px 12px rgba(255,255,255,0.95), 0 1px 1px rgba(0,0,0,0.15);
+  letter-spacing: 0.01em;
 }
 
 .nf-hero-content h1 {
@@ -125,7 +160,6 @@
   color: #222;
   margin-bottom: 2.2rem;
   line-height: 1.6;
-  text-shadow: 0 2px 12px rgba(255,255,255,0.85), 0 1px 1px rgba(0,0,0,0.10);
   font-weight: 600;
   letter-spacing: 0.01em;
 }
@@ -134,6 +168,7 @@
   display: flex;
   justify-content: center;
   gap: 1.5rem;
+  margin-bottom: 2.2rem;
 }
 
 .nf-btn {
@@ -172,11 +207,10 @@
 
 .nf-footer {
   text-align: center;
-  padding: 0.6rem 0 0.4rem 0;
-  font-size: 0.75rem;
-  color: #fff;
-  background: #111;
-  letter-spacing: 1px;
+  padding: 1rem;
+  background-color: #f9f9f9; /* Optional background color */
+  color: #888; /* Subtle grey color for copyright text */
+  font-size: 0.9rem;
 }
 
 .nf-form-container {
@@ -247,14 +281,25 @@
 }
 
 .nf-info-section {
-  margin: 1.1rem 0 0.2rem 0;
-  font-size: 0.85rem;
-  color: #555;
-  background: #f7f7f7;
-  border-radius: 10px;
-  padding: 0.7rem 1rem;
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
-  line-height: 1.5;
+}
+
+.nf-info-section h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.nf-info-section p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
 }
 
 .nf-divider {
@@ -301,6 +346,169 @@
   padding-left: 0.1rem;
 }
 
+.nf-scroll-indicator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  user-select: none;
+  z-index: 2;
+}
+.nf-double-v-static svg {
+  display: block;
+  margin: 0 auto;
+}
+.nf-double-v-static svg polyline {
+  stroke: #fff;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.35));
+}
+/* Remove animation for static arrow */
+.nf-double-v,
+.nf-double-v-static {
+  font-size: inherit;
+  color: inherit;
+  animation: none;
+  line-height: 1;
+}
+.nf-about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full screen height */
+  padding: 2rem;
+  background-color: #f4f4f4; /* Optional background color for visual separation */
+}
+
+.nf-about-content {
+  max-width: 800px;
+  width: 100%;
+}
+
+.nf-about-block {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nf-about h2 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  color: #333;
+  text-align: center;
+}
+
+.nf-about p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* General container styling for sections */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Testimonials Section */
+.nf-testimonials {
+  background-color: #f9f9f9;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.nf-testimonial-block {
+  margin: 1rem auto;
+  max-width: 600px;
+  font-style: italic;
+  color: #555;
+}
+
+.nf-testimonial-block cite {
+  display: block;
+  margin-top: 0.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Features Section */
+.nf-features {
+  background-color: #ffffff;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.nf-features ul {
+  list-style-type: disc;
+  margin: 0 auto;
+  max-width: 600px;
+  padding-left: 1.5rem;
+}
+
+.nf-features li {
+  margin-bottom: 0.5rem;
+  color: #555;
+}
+
+/* Call-to-Action Section */
+.nf-cta {
+  background-color: #e9f5ff;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.nf-cta-buttons {
+  margin-top: 1rem;
+}
+
+.nf-cta-buttons .nf-btn {
+  margin: 0.5rem;
+}
+
+/* Carousel Section */
+.nf-carousel {
+  background-color: #f4f4f4;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.nf-carousel-container img {
+  max-width: 100%;
+  height: auto;
+  margin: 0.5rem;
+}
+
+/* Statistics Section */
+.nf-stats {
+  background-color: #ffffff;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.nf-stats-grid {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.nf-stats-grid div {
+  text-align: center;
+}
+
+.nf-stats-grid h3 {
+  font-size: 2rem;
+  color: #333;
+}
+
+.nf-stats-grid p {
+  font-size: 1rem;
+  color: #555;
+}
+
 @media (max-width: 600px) {
   .nf-navbar {
     flex-direction: column;
@@ -311,14 +519,20 @@
     background: url('../public/golf-1486354.jpg') center 30%/cover no-repeat;
     padding: 2rem 0.5rem 1.5rem 0.5rem;
   }
-  .nf-hero-content {
+  .nf-hero-content,
+  .nf-hero-content-bg {
     padding: 1.2rem 0.5rem 1rem 0.5rem;
     background: none;
   }
-  .nf-hero-content h1 {
+  .nf-hero-content-bg {
+    max-width: 98vw;
+  }
+  .nf-hero-content h1,
+  .nf-hero-content-bg h1 {
     font-size: 2rem;
   }
-  .nf-hero-content p {
+  .nf-hero-content p,
+  .nf-hero-content-bg p {
     font-size: 1rem;
   }
   .nf-hero-buttons {
@@ -344,5 +558,23 @@
   .nf-input {
     font-size: 0.98rem;
     padding: 0.45rem 0.7rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .nf-about {
+    padding: 1rem;
+  }
+
+  .nf-about-content {
+    max-width: 100%;
+  }
+
+  .nf-about h2 {
+    font-size: 1.5rem;
+  }
+
+  .nf-about p {
+    font-size: 0.9rem;
   }
 }
