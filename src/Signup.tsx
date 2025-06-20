@@ -49,7 +49,7 @@ const Signup: React.FC = () => {
       const res = await fetch(`${API_BASE_URL}/users_create/`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ user, address }),
+        body: JSON.stringify({ user, address, org: 'neutralfit' }),
       });
       if (res.ok) {
         navigate('/login');
