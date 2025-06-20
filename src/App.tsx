@@ -4,6 +4,8 @@ import Home from './Home';
 import Signup from './Signup';
 import Login from './Login';
 import EditAddress from './EditAddress';
+import ClubFitting from './pages/ClubFitting';
+import ProtectedRoute from './components/ProtectedRoute';
 import './App.css';
 
 function App() {
@@ -14,6 +16,14 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/edit-address" element={<EditAddress />} />
+        <Route 
+          path="/club-fitting" 
+          element={
+            <ProtectedRoute>
+              <ClubFitting />
+            </ProtectedRoute>
+          } 
+        />
       </Routes>
     </Router>
   );

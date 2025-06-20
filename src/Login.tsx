@@ -15,6 +15,7 @@ const Login: React.FC = () => {
       const form = new URLSearchParams();
       form.append('username', email);
       form.append('password', password);
+      form.append('org', 'neutralfit');
       const res = await fetch(`${API_BASE_URL}/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -23,7 +24,7 @@ const Login: React.FC = () => {
       if (res.ok) {
         const data = await res.json();
         localStorage.setItem('token', data.access_token);
-        navigate('/edit-address');
+        navigate('/club-fitting');
       } else {
         setError('Login failed.');
       }
