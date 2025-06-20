@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-neutralfit-dev-3d273-authRole",
+      "UnauthRoleArn": "arn:aws:iam::543182730082:role/amplify-neutralfit-dev-3d273-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::543182730082:role/amplify-neutralfit-dev-3d273-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-neutralfit-dev-3d273-deployment",
+      "UnauthRoleName": "amplify-neutralfit-dev-3d273-unauthRole",
+      "StackName": "amplify-neutralfit-dev-3d273",
+      "StackId": "arn:aws:cloudformation:us-west-2:543182730082:stack/amplify-neutralfit-dev-3d273/92fda0c0-4b44-11f0-b7fb-06fd18ca9257",
+      "AmplifyAppId": "d3t5p55x60vpsp"
+    }
+  }
+}

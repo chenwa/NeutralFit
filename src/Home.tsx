@@ -156,6 +156,19 @@ const Home: React.FC = () => (
     <footer className="nf-footer">
       &copy; {new Date().getFullYear()} NeutralFit. All rights reserved.
     </footer>
+
+    {/* Open Graph / Facebook */}
+    <meta property="og:title" content="NeutralFit" />
+    <meta property="og:description" content="NeutralFit: Precision Golf Fitting & Beyond" />
+    <meta property="og:image" content="%PUBLIC_URL%/logo.svg" />
+    <meta property="og:url" content="https://main.d3eff9q6tcfn87.amplifyapp.com/" />
+    <meta property="og:type" content="website" />
+
+    {/* Twitter */}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="NeutralFit" />
+    <meta name="twitter:description" content="NeutralFit: Precision Golf Fitting & Beyond" />
+    <meta name="twitter:image" content="%PUBLIC_URL%/logo.svg" />
   </div>
 );
 
