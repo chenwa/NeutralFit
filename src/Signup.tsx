@@ -39,7 +39,7 @@ const Signup: React.FC = () => {
         body: JSON.stringify(user),
       });
       if (res.ok) {
-        navigate('/login');
+        navigate('/club-fitting');
       } else {
         setError('Sign up failed.');
       }
