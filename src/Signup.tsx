@@ -4,52 +4,39 @@ import API_BASE_URL from './config';
 import './App.css';
 
 const Signup: React.FC = () => {
-  const [form, setForm] = useState({
+  const [formData, setFormData] = useState({
     first_name: '',
     last_name: '',
     email: '',
     password: '',
-    street: '',
-    city: '',
-    state: '',
-    zip_code: '',
-    country: '',
   });
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
-    if (!form.first_name || !form.last_name || !form.email || !form.password) {
+    if (!formData.first_name || !formData.last_name || !formData.email || !formData.password) {
       setError('First name, last name, email, and password are required.');
       return;
     }
     try {
       const user = {
-        first_name: form.first_name,
-        last_name: form.last_name,
-        email: form.email,
-        password: form.password,
+        id: 0, // This will be set by the backend
+        first_name: formData.first_name,
+        last_name: formData.last_name,
+        email: formData.email,
+        password: formData.password,
+        org: 'neutralfit',
       };
-      const address = form.street || form.city || form.state || form.zip_code || form.country
-        ? {
-            user_id: 0, // backend will link by email
-            street: form.street,
-            city: form.city,
-            state: form.state,
-            zip_code: form.zip_code,
-            country: form.country,
-          }
-        : null;
       const res = await fetch(`${API_BASE_URL}/users_create/`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ user, address, org: 'neutralfit' }),
+        body: JSON.stringify(user),
       });
       if (res.ok) {
         navigate('/login');
@@ -67,22 +54,11 @@ const Signup: React.FC = () => {
       <h2 className="nf-form-title">Sign Up</h2>
       <form className="nf-form nf-form-small" onSubmit={handleSubmit}>
         <div className="nf-form-row">
-          <input className="nf-input" name="first_name" placeholder="First Name*" value={form.first_name} onChange={handleChange} required />
-          <input className="nf-input" name="last_name" placeholder="Last Name*" value={form.last_name} onChange={handleChange} required />
+          <input className="nf-input" name="first_name" placeholder="First Name*" value={formData.first_name} onChange={handleChange} required />
+          <input className="nf-input" name="last_name" placeholder="Last Name*" value={formData.last_name} onChange={handleChange} required />
         </div>
-        <input className="nf-input" name="email" type="email" placeholder="Email*" value={form.email} onChange={handleChange} required />
-        <input className="nf-input" name="password" type="password" placeholder="Password*" value={form.password} onChange={handleChange} required />
-        <hr className="nf-divider" />
-        <div className="nf-form-row">
-          <input className="nf-input" name="street" placeholder="Street" value={form.street} onChange={handleChange} />
-          <input className="nf-input" name="city" placeholder="City" value={form.city} onChange={handleChange} />
-        </div>
-        <div className="nf-form-row">
-          <input className="nf-input" name="state" placeholder="State" value={form.state} onChange={handleChange} />
-          <input className="nf-input" name="zip_code" placeholder="Zip Code" value={form.zip_code} onChange={handleChange} />
-        </div>
-        <input className="nf-input" name="country" placeholder="Country" value={form.country} onChange={handleChange} />
-        <div className="nf-optional-note">Address fields are optional and can be filled in later.</div>
+        <input className="nf-input" name="email" type="email" placeholder="Email*" value={formData.email} onChange={handleChange} required />
+        <input className="nf-input" name="password" type="password" placeholder="Password*" value={formData.password} onChange={handleChange} required />
         <button className="nf-btn nf-btn-primary nf-form-btn" type="submit">Sign Up</button>
       </form>
       {error && <div className="nf-error">{error}</div>}
