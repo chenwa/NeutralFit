@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import API_BASE_URL from './config';
 
 const Login: React.FC = () => {
@@ -43,6 +43,9 @@ const Login: React.FC = () => {
         <button className="nf-btn nf-btn-primary nf-form-btn" type="submit">Login</button>
       </form>
       {error && <div className="nf-error">{error}</div>}
+      <div className="nf-info-section">
+        Please <Link to="/signup">Sign Up</Link> if you don't have an account. 
+      </div>
       <footer className="nf-footer nf-footer-small">
         &copy; {new Date().getFullYear()} NeutralFit. All rights reserved.
       </footer>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import API_BASE_URL from './config';
 import './App.css';
 
@@ -63,6 +63,7 @@ const Signup: React.FC = () => {
       </form>
       {error && <div className="nf-error">{error}</div>}
       <div className="nf-info-section">
+        <strong>Note:</strong> <Link to="/login">Login</Link> if you already have an account. <br /> <br />
         <strong>Privacy Notice:</strong> NeutralFit does <u>not</u> collect, sell, or share your data. We will never send you marketing emails or share your information with third parties.
       </div>
       <div className="nf-info-section">
