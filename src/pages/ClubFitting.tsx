@@ -1,7 +1,9 @@
 import React from 'react';
 import './ClubFitting.css';
+import { Link, useNavigate } from 'react-router-dom';
 
 const ClubFitting = () => {
+  const navigate = useNavigate();
   const clubs = [
     'Driver', '3-Wood', '5-Wood',
     '4-Iron', '5-Iron', '6-Iron', '7-Iron', '8-Iron', '9-Iron',
@@ -9,8 +11,23 @@ const ClubFitting = () => {
     'Putter'
   ];
 
+  const handleSignOff = () => {
+    localStorage.removeItem('token');
+    sessionStorage.removeItem('token');
+    // If you use a different key for your token, update it here
+    navigate('/');
+  };
+
   return (
     <div className="club-fitting-container">
+      <nav className="nf-navbar">
+        <div className="nf-logo">
+          <span className="nf-logo-neutral">Neutral</span><span className="nf-logo-fit">Fit</span>
+        </div>
+        <div className="nf-nav-links">
+          <button className="nf-signoff-btn" onClick={handleSignOff}>Sign Off</button>
+        </div>
+      </nav>
       <aside className="sidebar">
         <h2>My Clubs</h2>
         <ul className="club-list">
