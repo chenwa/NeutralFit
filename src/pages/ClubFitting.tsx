@@ -25,7 +25,7 @@ const ClubFitting = () => {
           <span className="nf-logo-neutral">Neutral</span><span className="nf-logo-fit">Fit</span>
         </div>
         <div className="nf-nav-links">
-          <button className="nf-signoff-btn" onClick={handleSignOff}>Sign Off</button>
+          <a href="#" className="nf-signoff-link" data-discover="signoff" onClick={e => { e.preventDefault(); handleSignOff(); }}>Sign Off</a>
         </div>
       </nav>
       <aside className="sidebar">
